@@ -21,6 +21,7 @@ import (
 
 	"github.com/hyperledger/firefly-common/pkg/config"
 	"github.com/hyperledger/firefly-common/pkg/i18n"
+	"github.com/hyperledger/firefly/internal/blockchain/bsv"
 	"github.com/hyperledger/firefly/internal/blockchain/cardano"
 	"github.com/hyperledger/firefly/internal/blockchain/ethereum"
 	"github.com/hyperledger/firefly/internal/blockchain/fabric"
@@ -31,6 +32,7 @@ import (
 )
 
 var pluginsByType = map[string]func() blockchain.Plugin{
+	(*bsv.BSV)(nil).Name():           func() blockchain.Plugin { return &bsv.BSV{} },
 	(*cardano.Cardano)(nil).Name():   func() blockchain.Plugin { return &cardano.Cardano{} },
 	(*ethereum.Ethereum)(nil).Name(): func() blockchain.Plugin { return &ethereum.Ethereum{} },
 	(*fabric.Fabric)(nil).Name():     func() blockchain.Plugin { return &fabric.Fabric{} },
