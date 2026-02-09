@@ -20,6 +20,7 @@ namespaces:
       plugins:
         - database0
         - blockchain0
+        - tokens0
 
 plugins:
   database:
@@ -36,3 +37,8 @@ plugins:
         bsvconnect:
           url: http://localhost:5102
           topic: firefly
+  tokens:
+    - name: tokens0
+      type: fftokens
+      fftokens:
+        url: http://localhost:5111
