@@ -323,4 +323,6 @@ var (
 	MsgNodeMissingProfile                      = ffe("FF10482", "Node provided for check does not have a profile", 500)
 	MsgInvalidCardanoAddress                   = ffe("FF10483", "Supplied cardano address is invalid", 400)
 	MsgCardanoconnectRESTErr                   = ffe("FF10484", "Error from cardano connector: %s")
+	MsgInvalidBSVAddress                       = ffe("FF10485", "Supplied BSV address is invalid", 400)
+	MsgBsvconnectRESTErr                       = ffe("FF10486", "Error from BSV connector: %s")
 )

@@ -1,0 +1,44 @@
+http:
+  port: 5000
+  address: 127.0.0.1
+
+debug:
+  port: 6060
+
+metrics:
+  enabled: true
+  port: 6001
+
+log:
+  level: debug
+
+namespaces:
+  default: default
+  predefined:
+    - name: default
+      defaultKey: muw6hBSGsMXkyDjYdMc7z5vAjx4BLdyeXb
+      plugins:
+        - database0
+        - blockchain0
+        - tokens0
+
+plugins:
+  database:
+    - name: database0
+      type: sqlite3
+      sqlite3:
+        url: /tmp/firefly-bsv.db
+        migrations:
+          auto: true
+  blockchain:
+    - name: blockchain0
+      type: bsv
+      bsv:
+        bsvconnect:
+          url: http://localhost:5102
+          topic: firefly
+  tokens:
+    - name: tokens0
+      type: fftokens
+      fftokens:
+        url: http://localhost:5111

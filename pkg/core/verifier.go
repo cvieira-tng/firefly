@@ -36,6 +36,8 @@ var (
 	VerifierTypeMSPIdentity = fftypes.FFEnumValue("verifiertype", "fabric_msp_id")
 	// VerifierTypeFFDXPeerID is the peer identifier that FireFly Data Exchange verifies (using plugin specific tech) when receiving data
 	VerifierTypeFFDXPeerID = fftypes.FFEnumValue("verifiertype", "dx_peer_id")
+	// VerifierTypeBSVAddress is a Bitcoin SV address string
+	VerifierTypeBSVAddress = fftypes.FFEnumValue("verifiertype", "bsv_address")
 )
 
 // VerifierRef is just the type + value (public key identifier etc.) from the verifier
